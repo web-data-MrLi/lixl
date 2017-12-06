@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/2.0.2/jquery.js"></script>
+<script>
+	//获取url传参值。
+	//name可以是自己设置的属性,也可以是浏览器自带的属性
+function getQueryString(name) { 
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+    var r = window.location.search.substr(1).match(reg); 
+    if(r != null){
+        return unescape(r[2]); 
+    };
+    return null; 
+}; 
+//直接可以在所定的文件里面调用一下这个就可以的。
+var deom=getQueryString("__hbt")
+    console.log(deom)
+</script>

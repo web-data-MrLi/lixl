@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+<script>
+let day=[1,2,4,5]
+let data1=[
+          {da:1},
+          {da:2},
+          {da:3},
+          {da:4},
+          {da:5},
+          {da:6}
+           ]
+let neearr=[];
+for(let i=0;i<data1.length;i++){
+	neearr.push({
+		day:data1[i].da,
+		isrun:day.indexOf(data1[i].da) != -1 ? true : false
+		
+		
+	})
+	
+}
+console.log(neearr)
+</script>

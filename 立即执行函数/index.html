@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+	 //立即执行函数的应用，
+	 //第一点：在同时调用多个库的情况下，很容易造成对象或者变量的覆盖;
+	 //列入：lib.js{
+	 	      var num=1;
+	            }
+	        lia.js{
+	          var num=2;
+	        }
+	 以上要是同时引入两个js文件的话，就会出现变量的覆盖；
+	 但是如果改成一下的话，就不会了，
+	   lib.js{
+	   	    (function(){
+	 	      var num=1;
+	            }
+	         )()
+	       }
+	        lia.js{
+	          (function()
+	             var num=2;
+	         })()
+	        }
+	        
+	        
+	</body>
+</html>
+
+
+
+
+
+
+
+<script>
+	var f1=function(){
+		var run=[];
+		var full=null;
+		for(var i=0;i<10;i++){
+			//下面两个函数的区别，导致的结果是
+			(function(index){
+			aa=function(){
+				console.log(index)
+			}
+			run.push(aa)
+			})(i)
+			
+			/*aa=function(){
+				console.log(i)
+			}
+			run.push(aa)*/
+		}
+		
+		return run;
+	}
+	var res = f1();
+for(var i = 0; i < res.length; i++) {
+	console.log(res[i]());
+	//第一种函数的结果是可以输出0到10；第二种的结果是10个10
+}
+</script>

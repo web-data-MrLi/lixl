@@ -1,0 +1,139 @@
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #Txt{
+            width: 445px;
+            height: 30px;
+            border:none;
+            text-indent: 1.2em;
+            line-height: 30px;
+            font-size: 16px;
+            text-align: left;
+        }
+        #btn{
+            width: 48px;
+            height: 30px;
+            border:none;
+            background: white;
+        }
+        ul{
+            width: 500px;
+            height: 300px;
+            border:1px #ccc solid;
+            display: none;
+        }
+        li{
+            width: 480px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            text-align: left;
+            padding-left: 20px;
+            list-style:none;
+        }
+        li:hover{
+            background: rgb(245, 245, 245);
+        }
+        #bigBox{
+            width: 500px;
+            height: 500px;
+            margin: 220px auto;
+        }
+        #bigBox #hh{
+            border:1px rgb(203, 203, 203) solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigBox">
+        <div>
+            <div id="hh">
+                <input type="text" id="Txt" />
+                <input type="button" value="搜索" id="btn" />
+            </div>
+        </div>
+        <ul id="box" class="box"></ul>
+
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.js"></script>
+<script type="text/javascript">
+	var oTxt = document.getElementById("Txt");
+    var oUl = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    var oHead = document.getElementsByTagName("head")[0];
+     console.log(oHead,69)
+    oTxt.onkeyup = function(){
+    oUl.style.display = "block";
+    oUl.innerHTML = "";
+    var str = oTxt.value;
+    var sc = document.createElement("script");
+    sc.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+str+"&cb=fn";
+
+    oHead.appendChild(sc);
+}
+function fn(data){
+    var arr = data.s;
+    console.log(arr);
+    arr.forEach(function(value){
+        var li = document.createElement("li");
+        li.innerHTML = value;
+        oUl.appendChild(li);
+    })
+}
+//https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=aaaaaaa&cb=
+oUl.onclick = function(e){
+	console.log(e,90)
+    oUl.value = "";
+    var e = e || event;
+    var el = e.target || e.srcElement;
+    console.log(el,93)
+    if(el.nodeName == "LI"){
+        oTxt.value = el.innerHTML;
+    }
+    /*var url = "https://cn.bing.com/search?q=" + oTxt.value;*/
+    /*window.open(url);*/
+ /*  if(el.nodeName=="UL"){
+   	oUl.style.display = "none";
+   }*/
+}
+oBtn.onclick = function(){
+    var url = "https://cn.bing.com/search?q=" + oTxt.value;
+    location.href = url;
+}
+
+oTxt.onfocus = function(){
+	if($("#box").find("li").length>0){
+    oUl.style.display = "block";
+   }
+}
+$("#box").on("click","li",function(){
+	oUl.style.display = "none";
+})
+/*$('body').bind('click', function(event) {
+    // IE支持 event.srcElement ， FF支持 event.target    
+    var evt = event.srcElement ? event.srcElement : event.target;    
+    if(evt.id == 'box' ) return; // 如果是元素本身，则返回
+    else {
+        $("#box").hide(); // 如不是则隐藏元素
+    }   
+});*/
+/*$("#Txt").on("click","li",function(){
+	
+	oUl.style.display = "block";
+})*/
+
+
+
+/*oTxt.onfocus = function(){
+    oUl.style.display = "block";
+}
+oTxt.onblur = function(){
+    oUl.style.display = "none";
+}*/
+</script>

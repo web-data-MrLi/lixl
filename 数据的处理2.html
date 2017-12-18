@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>json数据转换，扁平化数组转为树形结构deom</h1>
+	</body>
+</html>
+<script>
+	 var a=[
+	     [1,2,3],
+	     [4,5,6],
+	     [7,8,9]
+	   ]
+	 var res=[];
+	 //先进性循环a【0】
+	 
+	for(var i=0;i<a[0].length;i++){
+		const obj={};
+		//定义一个对象
+		let el=obj;
+		//再循环数组的a的长度
+	for(var j=0;j<a.length;j++){
+		//先进行判断a数组的0 的时候的情况进行处理
+		if(j===0){
+		   el.label = a[j][i]
+           el.children = []
+		}else{
+			//j不是0 的情况就行赋值push
+			el.children.push({
+				label:a[j][i],
+				children:[]
+			}
+			)
+			//最后这个里面的children[0]等价于一个对象,之后进行一次循环
+			el=el.children[0]
+		}
+	}
+	res.push(obj)
+	}
+	console.log(res)
+</script>
+

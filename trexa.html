@@ -1,0 +1,547 @@
+ <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="cm" tagdir="/WEB-INF/tags" %>
+
+<!DOCTYPE html>
+<html>
+<cm:js />
+<cm:css />
+<input type="hidden" id="silu_head" silu_head="sy" />
+
+<head>
+    <meta charset="UTF-8">
+    <title>驷方达国际物流平台</title>
+    <link rel="stylesheet" href="${platPath}css/index.css">
+    <link rel="stylesheet" href="${basePath}default/js/uikit/css/components/dotnav.css">
+    <link rel="stylesheet" href="${basePath}default/js/uikit/css/components/slideshow.css">
+    <link rel="stylesheet" href="${basePath}default/js/uikit/css/components/sticky.css">
+    
+</head>
+<script type="text/html" id="indexBannerArt">
+    <ul class="uk-slideshow">
+       
+        {{each  as v i}}
+        <li><img src="${picPath}{{v.banner_img}}" alt=""></li>
+        {{/each}}
+        
+    </ul>
+    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
+        {{each  as v i}}
+        <li data-uk-slideshow-item="{{i}}"><a href=""></a></li>
+        {{/each}}
+    </ul>
+       
+    <div class="content banner_fixed">
+        <div class="uk-position-relative">
+            <div class="bannerFixed">
+                <div class="bannerFixed_1">
+                <p class="uk-text-center"><img src="${basePath }images/ban_w.png" /></p>
+                <span>免费注册</span>
+                <span>在线客服</span>
+               </div>
+            </div>
+        </div>
+    </div>
+</script>
+<body>
+	<cm:header />
+   <!--banner-->
+    <div class="uk-position-relative" id="indexBanner">
+             
+    </div>
+    <!--二级导航-->
+    <div class="second_nav" style="box-shadow: 4px 4px 4px rgba(11,7,9,0.13);" data-uk-sticky="{top: -20, animation: 'uk-animation-slide-top'}">
+        <div class="content">
+            <ul class="uk-grid uk-grid-collapse uk-tab uk-list homePoint" data-uk-tab>
+                <a class="uk-width-1-5 uk-active" data-uk-smooth-scroll="{offset: 85}" href="#sl_zoology">
+                    <li>
+                        <div class="uk-text-center uk-width-4-10 jump_1">
+                            <img class="jump_hover" src="${basePath}platform/images/jump_1.png" alt="">
+                            <img class="jump_hover_1" src="${basePath}platform/images/jump_1_1.png" alt="">
+                        </div>
+                        <div class="uk-width-6-10 jump_11">
+                        <p class="uk-text-left">物流服务</p>
+                        <p class="uk-text-left">Logistics service</p>
+                        </div>
+                       
+                    </li>
+                </a>
+                <a data-uk-smooth-scroll="{offset: 85}" href="#sl_business" class="uk-width-1-5">
+                    <li>
+                        <div class="uk-text-center uk-width-4-10 jump_1">
+                          <img class="jump_hover" src="${basePath}platform/images/jump_2.png" alt="">
+                          <img class="jump_hover_1" src="${basePath}platform/images/jump_2_2.png" alt="">
+                        </div>
+                        <div class="uk-width-6-10 jump_11">
+	                        <p class="uk-text-left">在线订舱</p>
+	                        <p class="uk-text-left">Online booking</p>
+                        </div>
+                    </li>
+                </a>
+                <a data-uk-smooth-scroll="{offset: 85}" href="#sl_advantage" class="uk-width-1-5">
+                    <li>
+                        <div class="uk-text-center uk-width-4-10 jump_1">
+                        <img class="jump_hover" src="${basePath}platform/images/jump_3.png" alt="">
+                         <img class="jump_hover_1" src="${basePath}platform/images/jump_3_3.png" alt="">
+                        </div>
+                         <div class="uk-width-6-10 jump_11">
+	                         <p class="uk-text-left">服务优势</p>
+	                         <p class="uk-text-left">Service advantages</p>
+                         </div>
+                    </li>
+                </a>
+                <a data-uk-smooth-scroll="{offset: 85}" href="#sl_client" class="uk-width-1-5">
+                    <li>
+                        <div class="uk-text-center uk-width-4-10 jump_1">
+                            <img class="jump_hover" src="${basePath}platform/images/jump_4.png" alt="">
+                           <img class="jump_hover_1" src="${basePath}platform/images/jump_4_4.png" alt="">
+                          </div>
+                         <div class="uk-width-6-10 jump_11">
+	                        <p class="uk-text-left">衍生服务</p>
+	                         <p class="uk-text-left">Derivative services</p>
+	                      </div>
+                    </li>
+                </a>
+                <a data-uk-smooth-scroll="{offset: 85}" href="#sl_news" class="uk-width-1-5 last_a">
+                    <li>
+                        <div class="uk-text-center uk-width-4-10 jump_1">
+                             <img class="jump_hover" src="${basePath}platform/images/jump_5.png" alt="">
+                           <img class="jump_hover_1" src="${basePath}platform/images/jump_5_5.png" alt="">
+                            </div>
+                        <div class="uk-width-6-10 jump_11">
+	                         <p class="uk-text-left">服务理念</p>
+	                         <p class="uk-text-left">Service concept</p>
+                         </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!--物流服务-->
+    <div class="content" id="sl_zoology" number=0 data-uk-scrollspy="{cls:'uk-animation-fade', repeat: true}">
+        <div class="sl_service">
+            <div class="nav_title uk-flex uk-flex-center" style="margin: 0;">
+                <span class="title_service">
+                    <div class="uk-flex uk-flex-center uk-flex-wrap uk-flex-wrap-middle">
+                        <p class="defaultColor uk-text-center"><span style="color:#2e9dd9">物流</span>服务</p>
+                        <p class="uk-text-center">Logistics service</p>
+                    </div>
+                </span>
+            </div>
+            <div class="uk-grid uk-grid-collapse service_main">
+                <div class="uk-width-1-2">
+                    <div class="service_main_item">
+                        <img src="${basePath}platform/images/wlfw.png" alt="">
+                        <span class="wlfu_h">海运·空运</span>
+                        <p>提供国内陆运、报关、国际海运／空运、清关全套解决方案</p>
+                        <p>支持拼箱、集装箱、散货等各种运输模式</p>
+                        <p>与多家报关行及航空公司保持长期稳定合作关系</p>
+                        <p>一手优质价格货源</p>
+                        <p>全球航线，无所限制</p>
+                        <span class="wlfu_down"></span>
+                        <span class="wlfu_up"></span>
+                    </div>
+                    <div class="wlfw_car_0">
+                       <div class="wlfu_car">
+                        </div>
+                        <div class="wlfu_car_1">
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-1-2">
+                    <div class="wlfw_car_01">
+                       <div class="wlfu_car_02">
+                        </div>
+                        <div class="wlfu_car_13">
+                        </div>
+                    </div>
+                    <div class="service_main_item_1">
+                        <img src="${basePath}platform/images/wlfw_w.png" alt="">
+                        <span class="wlfu_h_1">海运·空运</span>
+                        <p>提供国内陆运、报关、国际海运／空运、清关全套解决方案</p>
+                        <p>支持拼箱、集装箱、散货等各种运输模式</p>
+                        <p>与多家报关行及航空公司保持长期稳定合作关系</p>
+                        <p>一手优质价格货源</p>
+                        <p>全球航线，无所限制</p>
+                        <span class="wlfu_down_1"></span>
+                        <span class="wlfu_up_1"></span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--在线订舱系统-->
+    <div class="sl_business" id="sl_business" number=1 data-uk-scrollspy="{cls:'uk-animation-fade', repeat: true}">
+        <div class="content">
+            <div class="nav_title uk-flex uk-flex-center">
+                <span class="title_business">
+                    <div class="uk-flex uk-flex-center uk-flex-wrap uk-flex-wrap-middle">
+                        <p class="defaultColor uk-text-center"><span style="color:#2e9dd9">在线订舱</span>系统</p>
+                        <p class="uk-text-center">Online booking</p>
+                    </div>
+                </span>
+                
+            </div>
+            <div class="uk-grid uk-grid-collapse business_main">
+                <div class="uk-width-4-10">
+                 <img src="${basePath}platform/images/prototype.png" alt="">
+                </div>
+                <div class="uk-width-1-10">
+                </div>
+                 <div class="uk-width-5-10 zxdc">
+                 <div class="zxdc_0">
+                 <p class="zxdc_1">驷鹿自主研发的在线订舱系统，可以在任何地点通过电脑及移动端的网络对整个物<p>
+                 <p class="zxdc_1">流流程进行快速、简便的操作，并可轻松管理所有订单，使整个国际物流更清晰便</p>
+                 <p class="zxdc_1">捷，更易管理</p>
+                 <span>在线订舱</span>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--服务优势-->
+    <div class="sl_advantage" id="sl_advantage" number=2 data-uk-scrollspy="{cls:'uk-animation-fade', repeat: true}">
+        <div class="content">
+         <div class="nav_title uk-flex uk-flex-center">
+            <span class="title_advantage">
+                <div class="uk-flex uk-flex-center uk-flex-wrap uk-flex-wrap-middle">
+                    <p class="defaultColor uk-text-center"><span style="color:#2e9dd9">服务</span>优势</p>
+                    <p class="uk-text-center">Service advantages</p>
+                </div>
+            </span>
+         </div>
+          <div class="uk-grid uk-grid-collapse advantage_main">
+              <div class="uk-width-1-4 fwys">
+                 <div class="fwys_little_1">
+                   <img src="${basePath}platform/images/little.png" alt="">
+                 </div>
+                 <p>专业</p>
+                 <p>PROFESSIONAL</p>
+                 <p><img src="${basePath}platform/images/rectangle.png" alt=""></p>
+                 <p>船公司一手价格   </p>
+                 <p>线路／模式多种选择</p>
+                 <p>流程优化</p>
+                 <p>风险把控／特殊问题最优处理</p>
+                 <p>物流方案定制化服务</p>
+                 <p>售后指导培训</p>
+              </div>
+              <div class="uk-width-1-4 fwys_1">
+                 <div class="fwys_little_1">
+                   <img src="${basePath}platform/images/platform.png" alt="">
+                 </div>
+                 <p>平台</p>
+                 <p>PLAFORM</p>
+                 <p><img src="${basePath}platform/images/rectangle.png" alt=""></p>
+                 <p class="rectangle">业务便利</p> 
+                 <p>业务便利</p> 
+                 <p>信息查询</p>
+                 <p>开放资源</p>
+              </div>
+              <div class="uk-width-1-4 fwys_2">
+                 <div class="fwys_little_1">
+                   <img src="${basePath}platform/images/earth.png" alt="">
+                 </div>
+                 <p>海外</p>
+                 <p>OVERSEAS</p>
+                  <p><img src="${basePath}platform/images/rectangle.png" alt=""></p>
+                  <p class="rectangle">业务便利</p>
+                 <p>一级物流、清关</p>
+                 <p>订单资源</p>
+              </div>
+              <div class="uk-width-1-4 fwys_3">
+               <div class="fwys_little_1">
+                   <img src="${basePath}platform/images/government.png" alt="">
+                 </div>
+                 <p>政府</p>
+                 <p>OVERSEAS</p>
+                  <p><img src="${basePath}platform/images/rectangle.png" alt=""></p>
+                  <p class="rectangle">业务便利</p>
+                 <p>一带一路政策分享</p>
+              </div>
+          </div>
+          <div class="uk-flex uk-flex-center title_advantage_1">
+            <span class="title_advantage_2">
+                   <p>我们在提供传统国际物流服务的同时，还可以为您提供线上线下从寻找客户、到发运、到目的港清关入仓的一站式服务；</p>
+                   <p>我们海外分支机构的自有采购订单会优先考虑已有客户作为供应商；</p>
+                   <p>专注于“一带一路”国家外贸服务的我们还可以为您分享相关的“一带一路”国家政策，有助于您分享政策红利和开拓市场</p>
+            </span>
+         </div>
+        </div>
+       
+    </div>
+    <!--海外仓-->
+    
+    <!--衍生服务-->
+    <div class="sl_client" id="sl_client" number=3 data-uk-scrollspy="{cls:'uk-animation-fade', repeat: true}">
+       <div class="content">
+        <div class="nav_title uk-flex uk-flex-center">
+            <span class="title_client">
+                <div class="uk-flex uk-flex-center uk-flex-wrap uk-flex-wrap-middle">
+                     <p class="defaultColor uk-text-center"><span style="color:#2e9dd9">衍生</span>服务</p>
+                    <p class="uk-text-center">Derivative services</p>
+                </div>
+            </span>
+        </div>
+         <div class="uk-grid uk-grid-collapse advantage_main ysfw_hover_1">
+              <div class="uk-width-1-4 ysfw _ysfw ysfw_hover">
+                 <div class="ysfw_little_1">
+                     <img src="${basePath}platform/images/ysfw.png" alt="">
+                 </div>
+                 <p>物流培训</p>
+                 <p class="ysfw_img_0">
+                   <img class="ysfw_img" src="${basePath}platform/images/ywfu_2.png" alt="">
+                    <img class="ysfw_img_1" src="${basePath}platform/images/ywfw_1.png" alt="">
+                 </p>
+                 <p>拥有多年实际操作经验的专业物  </p>
+                 <p>流人员及专业物流讲师为您提供</p>
+                 <p>全面、专业、透彻的物流培训服</p>
+              </div>
+              <div class="uk-width-1-4 ysfw_1 _ysfw ysfw_hover">
+                 <div class="ysfw_little_1">
+                   <img src="${basePath}platform/images/ysfw_1.png" alt="">
+                 </div>
+                 <p>物流规划</p>
+                 <p class="ysfw_img_0">
+                   <img class="ysfw_img" src="${basePath}platform/images/ywfu_2.png" alt="">
+                    <img class="ysfw_img_1" src="${basePath}platform/images/ywfw_1.png" alt="">
+                 </p>
+                 <p>依据不同客户的不同情况及需求，</p> 
+                 <p>结合地域及付费方式设计专属于您</p>
+                 <p>的定制物流解决方案</p>
+              </div>
+              <div class="uk-width-1-4 ysfw_2 _ysfw ysfw_hover">
+                 <div class="ysfw_little_1">
+                   <img src="${basePath}platform/images/ysfw_2.png" alt="">
+                 </div>
+                 <p>物流法务</p>
+                 <p class="ysfw_img_0">
+                   <img class="ysfw_img" src="${basePath}platform/images/ywfu_2.png" alt="">
+                    <img class="ysfw_img_1" src="${basePath}platform/images/ywfw_1.png" alt="">
+                 </p>
+                 <p>与多家律师事务所建立有良好稳定</p>
+                 <p>合作关系，可以提供针对国际物流的</p>
+                 <p>法务咨询及辩护服务</p>
+              </div>
+              <div class="uk-width-1-4 ysfw_3 _ysfw ysfw_hover">
+               <div class="ysfw_little_1">
+                   <img src="${basePath}platform/images/ysfw_3.png" alt="">
+                 </div>
+                 <p>平台服务</p>
+                 <p class="ysfw_img_0">
+                   <img class="ysfw_img" src="${basePath}platform/images/ywfu_2.png" alt="">
+                    <img class="ysfw_img_1" src="${basePath}platform/images/ywfw_1.png" alt="">
+                 </p>
+                 <p>自有跨境综合外贸服务平台为您提供</p>
+                 <p>从寻找客户到货物发送到收货人手中</p>
+                 <p>的一条龙外贸服务</p>
+              </div>
+          </div>
+           </div>
+    </div>
+    <!--服务理念-->
+    <div class="sl_news" id="sl_news" number=4 data-uk-scrollspy="{cls:'uk-animation-fade', repeat: true}">
+        <div class="content">
+        <div class="nav_title uk-flex uk-flex-center">
+            <span class="title_client">
+                <div class="uk-flex uk-flex-center uk-flex-wrap uk-flex-wrap-middle">
+                     <p class="defaultColor uk-text-center"><span style="color:#2e9dd9">服务</span>理念</p>
+                    <p class="uk-text-center">Service concept</p>
+                </div>
+            </span>
+        </div>
+         <div class="uk-grid uk-grid-collapse fwln_content">
+              <div class="uk-width-3-10 fwln">
+                <div class="fwln_top">
+                    <img src="${basePath}platform/images/fwln_top.png" alt="">
+                </div> 
+                <div class="fwln_bottom_0">
+                    <div class="fwln_add_1">
+			                          服务专业
+			         </div>
+			        <div class="fwln_top_1">
+                    <img src="${basePath}platform/images/circle.png" alt="">
+                    </div> 
+			       <p>我们的团队是骨干都是拥有十多年国际物流</p>
+			       <p>行业经验的专业团队，提供专业可靠的物流</p>
+			       <p>服务。轻松应对各种海运、空运、铁路/陆运</p>
+			       <p class="fwln_child_p">及多式联运的一般流程及突发状况的处理。</p>
+			       <p class="fwln_add"><img src="${basePath}platform/images/fwln_add.png" alt=""></p>
+                 <!--  <div class="fwln_add">
+			              
+			    </div> -->
+                </div>
+			    <div class="fwln_bottom">
+			                  服务专业
+			    </div>
+              </div>
+               <div class="uk-width-3-10 fwln_1">
+                <div class="fwln_top_on">
+                    <img src="${basePath}platform/images/fwln_top_1.png" alt="">
+                </div> 
+                <div class="fwln_bottom_0_on">
+                    <div class="fwln_add_1_on">
+			                                消费清晰
+			         </div>
+			        <div class="fwln_top_1_on">
+                    <img src="${basePath}platform/images/circle.png" alt="">
+                    </div> 
+			       <p>我们提供物流服务方的一手即时报价，服务中</p>
+			       <p>无隐藏消费。同时我们拥有完善的售前、售中</p>
+			       <p>与售后服务体系，让客户在每个服务阶段都明</p>
+			       <p class="fwln_child_p_1">明白白消费。</p>
+                  <p class="fwln_add_on">
+			         <img src="${basePath}platform/images/fwln_add.png" alt="">          
+			    </p>
+                </div>
+			    <div class="fwln_bottom_on">
+			                    消费清晰
+			    </div>
+              </div>
+               <div class="uk-width-3-10 fwln_2">
+                        <div class="fwln_top_up">
+                    <img src="${basePath}platform/images/fwln_top_2.png" alt="">
+                </div> 
+                <div class="fwln_bottom_0_up">
+                    <div class="fwln_add_1_up">
+			                        物流便捷
+			         </div>
+			        <div class="fwln_top_1_up">
+                    <img src="${basePath}platform/images/circle.png" alt="">
+                    </div> 
+			       <p>我们已经与多家服务提供商建立了良好的合</p>
+			       <p>作关系，拥有专业专有的服务渠道，并在多</p>
+			       <p>国设立办事处或专业代办机构，轻松应对往</p>
+			       <p>返于世界各个港口的物流服务，让物流服务</p>
+			       <p class="fwln_child_p_2">更优质、更高效。</p>
+                  <p class="fwln_add_up">
+			         <img src="${basePath}platform/images/fwln_add.png" alt="">          
+			    </p>
+                </div>
+			    <div class="fwln_bottom_up">
+			                 物流便捷
+			    </div>
+              </div>
+             
+             
+              
+           </div>
+         </div>
+    </div>
+      
+    <!--QQ,微信-->
+   <%-- <%--  <div class="qq_weixin">
+        <div class="uk-position-relative"><img src="${basePath}images/weixin.png" alt=""><img src="${basePath}images/weixin_erweima.png" alt=""></div>
+        <div><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3537330879&site=qq&menu=yes"><img src="${basePath}images/QQ.png" ></a></div>
+    </div> --%> 
+    <%-- <div class="cjzf uk-cover-background">
+		<img style="opacity:0.4;" src="${basePath }images/cjzf_bg.jpg" />
+		<div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+			<img class="cjzf_wz" src="${basePath }images/cjzf_wz.png" />
+		</div>
+		<a class="cjzf_close"><img src="${basePath }images/cjzf_close.png" /></a>
+	</div> --%>
+	<cm:footer />
+</body>
+<script>
+    $(".second_nav").hide()
+    var data2 = new Array();
+    /*获取banner*/
+    function getBanner(cm){
+        $.ajax({
+            url: jsonPath + "wl/banner/queryBannerList",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json", 
+            type: "get", 
+            success: function(data, status){
+                var data=data.responseData;
+                console.log(data,102)         
+               cm.renderHtml('indexBannerArt',data,'indexBanner');
+                var slideshow = UIkit.slideshow('#indexBanner', {autoplay:true, animation: 'scroll', height: '560px'});
+            },
+            error: function(request, status, message) {
+                layer.msg("网络异常，请重试");
+            }
+        });
+    }
+    /* 服务理念 */
+    $(".fwln").hover(function(){
+				$(this).children(".fwln_bottom_0").slideDown(500);
+				$(this).children(".fwln_top").slideDown(500);
+				$(".fwln_add").css("display","block");
+				$(".fwln_bottom").css("display","none");
+	},function(){
+	            $(".fwln_bottom_0").slideUp(500);
+				$(".fwln_top").slideUp(500);
+				$(".fwln_bottom").css("display","block");
+	})
+	 $(".fwln_1").hover(function(){
+				$(this).children(".fwln_bottom_0_on").slideDown(500);
+				$(this).children(".fwln_top_on").slideDown(500);
+				$(".fwln_bottom_on").css("display","none");
+	},function(){
+	           $(".fwln_bottom_0_on").slideUp(500)
+				$(".fwln_top_on").slideUp(500);
+				$(".fwln_bottom_on").css("display","block"); 
+	}
+	)
+	 $(".fwln_2").hover(function(){
+				$(this).children(".fwln_bottom_0_up").slideDown(500);
+				$(this).children(".fwln_top_up").slideDown(500);
+				$(".fwln_bottom_up").css("display","none");
+	 },function(){
+	             $(".fwln_bottom_0_up").slideUp(500)
+				$(".fwln_top_up").slideUp(500);
+				$(".fwln_bottom_up").css("display","block");  
+	 })
+	
+    /*获取元素位置，并变更附着选中位置*/
+    function getPositionChange(pos,nowpos){
+       var p = $(pos).offset().top - 100;
+        var number = $(pos).attr("number");
+        if(nowpos >= p){
+            $(".homePoint").find("a").removeClass("uk-active");
+            $(".homePoint").find("a").eq(number).addClass("uk-active");
+        }
+	      var x = $(".second_nav").offset().top
+	      console.log(x,481)
+	        if(x>633){
+	         $(".second_nav").css("background","#D2DFE6")
+	        }else{
+	        
+	        $(".second_nav").css("background","rgba(41,139,190,0.5)")
+	        }
+        }
+    
+    require(["uikit!slideshow,sticky","app/common"],function(UI,cm){
+        getBanner(cm);
+        $('[data-uk-switcher]').on('show.uk.switcher', function(event, area){
+            var newsType = $(this).find(".uk-active").attr("newsType");
+            $(".uk-sticky-placeholder").addClass("uk-sticky-placeholder_1")
+        });
+        $(document).scroll(function(){
+            var winPos = $(window).scrollTop();
+            getPositionChange('#sl_zoology',winPos);
+            getPositionChange('#sl_business',winPos);
+            getPositionChange('#sl_advantage',winPos);
+            getPositionChange('#sl_client',winPos);
+            getPositionChange('#sl_news',winPos);
+        });
+        var winPos = $(window).scrollTop();
+        getPositionChange('#sl_zoology',winPos);
+        getPositionChange('#sl_business',winPos);
+        getPositionChange('#sl_advantage',winPos);
+        getPositionChange('#sl_client',winPos);
+        getPositionChange('#sl_news',winPos);
+    });
+</script>
+
+<script>
+ function fun(){
+   $(".second_nav").addClass("second_nav_1")
+    $(".second_nav").show()
+}
+window.onload = function(){
+    setTimeout("fun()",500)
+} 
+</script>
+</html>

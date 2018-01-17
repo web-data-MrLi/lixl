@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="layer/skin/layer.css"/>
+		<script src="jquery.js"></script>
+	   <script src="layer/layer.js"></script>
+	   
+	</head>
+	<style>
+		*{
+			list-style: none;
+		}
+	</style>
+	
+	<body>
+       <div class="content">
+		<div>
+			<span>增值服务</span>
+			<button class="select_btn">选择</button>
+		</div>
+		<table  border="1" cellspacing="0" >
+			<thead>
+				<tr>
+					<td>增值服务编号</td>
+					<td>增值服务</td>
+					<td>留言</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody class="item_box">
+				
+			</tbody>
+		</table>
+	</div>
+	</body>
+</html>
+<script>
+var sel_data=[];//定义一个项目选择的数组
+		//点击“选择”按钮事件
+		$(".select_btn").click(function(){
+			layer.open({
+			    type:1,
+			    title:false, //去掉标题栏
+			    fixed:false,//弹窗是否可以随鼠标滚动，默认为TRUE，固定在页面中，设为false可以适用于弹出层很长的页面
+			    area:['400px','500px'], //自定义弹窗的大小
+			    offset: '50px',  //坐标，弹窗距离顶部50px
+			    btn:['确定','取消'],  
+			    btnAlign:'c',   //按钮排列,即按钮的位置  'l'按钮左对齐 ,  'c'按钮居中对齐，'r'按钮右对齐，默认值不用设置
+			    yes: function(index, layero){
+			    		//alert("确定之后的回调函数");
+					    //do something
+					    console.log(sel_data);//确定之后的数组
+					    $(".item_box").find("*").remove();//每次确定之后之前已经存在页面的先清空，避免重复渲染已存在的项目
+					    for(var i in sel_data){
+					    	console.log("每一项i：",i,sel_data[i]);
+					    	var str="<tr>"+
+					    				"<td class='bh'>"+sel_data[i].bianhao+"</td>"+
+					    				"<td class='na'>"+sel_data[i].name+"</td>"+
+					    				"<td><input type='text'  /></td>"+
+					    				"<td><span class='del'>删除明细</span></td>"+
+					    			"</tr>"
+					    	$(".item_box").append(str);
+					    }
+					    
+					    layer.close(index); //如果设定了yes回调，需进行手工关闭
+					  },
+				success: function(layero, index){ //success - 层弹出后的成功回调方法
+				    //console.log(layero, index);
+				    console.log("弹窗出现时的数组：",sel_data);
+				    for(var j in sel_data){
+				    	var num=sel_data[j].bianhao;
+				    	var item_name2=sel_data[j].name;
+				    	$("#ck"+num).attr("checked",true);
+				    	$(".sel_items").append("<span id='"+num+"'>"+item_name2+" </span>"); 
+				    }
+				    
+				    $(".ck").click(function(){
+				    	var item_name=$(this).parent().siblings("td").text(); //项目名字
+				    	var bianhao=$(this).parent().siblings("td").attr("bianhao"); //项目编号
+				    	if($(this).is(":checked")){
+				    		$(".sel_items").append("<span id='"+bianhao+"'>"+item_name+" </span>");
+				    		sel_data.push({'name':item_name,'bianhao':bianhao});
+				    		console.log("每次点击添加后的数组2222",sel_data);
+				    	}else{
+				    		$("#"+bianhao).remove();
+				    		for(var m in sel_data){
+				    			if(sel_data[m].bianhao===bianhao){
+				    				sel_data.splice(m,1); 
+				    			}
+				    		}
+				    		console.log("每次取消添加后的数组3333",sel_data);
+				    	}
+				    	
+				    })
+				 },
+			    content:'<div class="box2" style="padding:20px;">'+
+							'<table  border="1" cellspacing="0" >'+
+								'<thead>'+
+									'<tr>'+
+										'<td>选择</td>'+
+										'<td>项目</td>'+
+									'</tr>'+
+								'</thead>'+
+								'<tbody>'+
+									'<tr>'+
+										'<td><input type="checkbox" class="ck" id="ck001" /></td>'+
+										'<td bianhao="001">到货拍照</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td><input type="checkbox" class="ck" id="ck002" /></td>'+
+										'<td bianhao="002">更换包装</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td><input type="checkbox" class="ck" id="ck003" /></td>'+
+										'<td bianhao="003">贴标/换标</td>'+
+									'</tr>'+
+								'</tbody>'+
+							'</table>'+
+							'<hr />'+
+							'<div class="sel_items">已选择项目：</div>'+
+						'</div>' //弹窗内的自定义的HTML内容,
+			});//弹窗结束
+			
+		})//click事件结束
+		
+		//删除每一条明细
+		$(".item_box").on("click",".del",function(){
+			$(this).parent().parent().remove();
+			//同时删除数组sel_data中的数据
+			var item_name=$(this).parent().siblings(".na").text(); //项目名字
+			var bianhao=$(this).parent().siblings(".bh").text(); //项目编号
+			 for(var n in sel_data){
+    			if(sel_data[n].bianhao===bianhao){
+    				sel_data.splice(n,1); 
+    			}
+    		}
+			console.log("页面上删除后的数组555：",sel_data);
+		})
+</script>
+<!--关于一个弹窗的应用，点击打开选择 ，数据渲染出来，点击复选框，把选上的标题添加到下面，点击的当前这个复选框个的标题和内容添加到上面，
+ 然后把这个复选框点击上的，追加到一个全局的数组中，如果是点击的复选框，之后选择了取消，下面的展示的标题要做处理，还有就是放到数组里面的东西
+ 也要删除所取消的，当点击确定的时候，这个数组里面的数据渲染到页面上，这个要处理一下，再次点击的选择的时候，要不之前 渲染到页面上的数据
+ 删掉，重新渲染，避免重复加载，
+ 当在页面上删除其中一一个时，要把这个删除的在数组中去掉。进而再次点击选择的时候，把这个数组，和之前的复选框对应起来，把这个复选框中的数据
+ 对应到复选框上，在把一些东西做处理，
+ 这个数组在这个功能中齐全局的作用，学习到了layer中的yes和function的用处。
+	
+	
+-->

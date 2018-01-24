@@ -28,3 +28,7 @@ https://www.cnblogs.com/banning/p/6250677.html
    })
 	  console.log(bb)
 </script>
+
+错误的积累：
+Uncaught TypeError: Cannot read property 'length' of undefined；报这种length错误的信息，
+一般是length前面的那个变量是undefined；

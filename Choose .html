@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js">
+    	
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    	*{
+    		list-style: none;
+    	}
+    	.add1{
+	    		width: 200px;
+	    		height: 200px;
+	    		background: #3388FF;
+	    		padding-top: 20px;
+	    		text-align: center;
+    	  }
+    	.add2{
+    			width: 200px;
+	    		height: 200px;
+	    		background: #3388FF;
+	    		padding-top: 20px;
+	    		text-align: center;
+    	}
+      .add3{
+      		width: 200px;
+    		  height: 200px;
+    		  background: #3388FF;
+    		  padding-top: 20px;
+    		  text-align: center;
+       }
+    	.add_1{
+    		  width: 50px;
+    		  height: 50px;
+    		  background: red;
+    	}
+    	.add_2{
+    		  width: 50px;
+    		  height: 50px;
+    		  background: red;
+    	}
+    	.add_3{
+    		  width: 50px;
+    		  height: 50px;
+    		  background: red;
+    	}
+    </style>
+</head>
+<body>
+	<div>
+		
+	
+	<ul>
+		<li class="add1">1</li>
+		<li class="add2">2</li>
+		<li class="add3">3</li>
+	</ul>
+	</div>
+	<div>
+	  <ul class="add_1">
+			 	<li>111</li>
+			 	<li>222</li>
+			 	<li>333</li>
+		 </ul>
+		 <ul class="add_2">
+			 	<li>444</li>
+			 	<li>555</li>
+			 	<li>666</li>
+		 </ul>
+		 <ul class="add_3">
+			 	<li>777</li>
+			 	<li>888</li>
+			 	<li>999</li>
+		 </ul>
+		 </div>
+</body>
+</html>
+<script>
+	for (var i = 1; i <= 3; i++)
+    (function (i) {
+      $('.add'+i).click(function () {
+          $('.add_'+i).slideDown(800).siblings().hide(800);
+      });
+    })(i);
+	  
+	 
+</script>

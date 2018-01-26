@@ -13,7 +13,7 @@ http://www.zhangxinxu.com/wordpress/2010/01/absolute绝对定位的非绝对定�
 分为两条轴，x轴和y轴，还有一些特殊的属性，支持ie10以上的浏览器，目前应用在移动端比较多的，
 Babel应用的就是es6到es5 的一个编译
 DOM事件中target和currentTarget的区别
-currentTarget(你绑定事件的那个元素), target(触发事件的那个目标)
+currentTarget(你绑定事件的那个元素), target(触发事件的那个目标) 
 JSONP的原理和实现以及cors怎么设置。看一下这篇就足够了。
 https://www.cnblogs.com/banning/p/6250677.html
 
@@ -32,3 +32,39 @@ https://www.cnblogs.com/banning/p/6250677.html
 错误的积累：
 Uncaught TypeError: Cannot read property 'length' of undefined；报这种length错误的信息，
 一般是length前面的那个变量是undefined；
+
+2018年1月26日
+对jsp的页面的一些了解，还有对php和.net的比较
+https://segmentfault.com/a/1190000012990520
+
+2018年1月27日
+localStrorage,sessionStrorage,cookie 都是属于web Storage
+sessionStorage 是保存会话数据，localStorage 在客户端长期保存数据
+sessionStorage: 该数据实质上是被保存在session对象中，保存用户的临时会话数据，一旦关闭浏览器，所有数据都会消失
+localStorage: 该对象可将数据长期保存在客户端中，即使重新打开浏览器也不会丢失
+cookie: 将数据保存在用户的客户端，存在于用户硬盘文件上，其缺点事：限制保存数据空间大小，数据保密性差、代码操纵复制等。
+ 
+区别：
+1.数据的有效性不同，sessionstorage仅在当前浏览器中有效，关闭浏览器数据消失。localstorage关闭浏览器也有效。cookie只在设置cookie过期时间内有效，无论浏览器是否关闭。
+2.作用域不同。sessionStorage不在不同浏览器窗口中共享。localStorage在所有同源窗口中共享。cookie也是所有同源窗口中共享
+ 
+不同浏览器无法共享localStorage或sessionStorage中的信息，相同浏览器的不同页面可以共享相同的localStorage（页面属于相同域名和端口），但是不同页面或标签页间无法共享sessionStorage的信息。
+ 
+总结：localStorage需要在同主域名和端口下才能互相访问 而且是一直保留
+sessionStorage只能在单个窗口页面中进行保留
+ 
+允许存储大小：谷歌浏览器5M左右，不同浏览器可存储大小不同
+ 
+cookie 可存储大小4KB
+
+2018年1月28日
+
+<script type="text/javascript">
+	 判断数组里面的最大值,并显示这个值的name;
+	 var aa;
+	 var arr=[{a:7},{b:2},{c:0},{d:5},{e:1}];
+	 aa=arr.sort(function(item1,item2){
+    return item2[Object.keys(item2)[0]]-item1[Object.keys(item1)[0]]
+  })[0] 
+  console.log(aa,32)
+</script>

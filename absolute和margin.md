@@ -58,7 +58,7 @@ sessionStorage只能在单个窗口页面中进行保留
 cookie 可存储大小4KB
 
 2018年1月28日
-
+7
 <script type="text/javascript">
 	 判断数组里面的最大值,并显示这个值的name;
 	 var aa;

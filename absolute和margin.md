@@ -80,3 +80,6 @@ https://segmentfault.com/a/1190000013041329
 addEventListener()js中的监听事件，可以监听好多的点击的动作，然后可以给所需要的东西添加一些内容
 2018年2月2号
 
+学习node.js文档，
+学习了node的安装和介绍
+http://www.runoob.com/nodejs/nodejs-tutorial.html

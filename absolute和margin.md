@@ -82,4 +82,10 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
 
 学习node.js文档，
 学习了node的安装和介绍
-http://www.runoob.com/nodejs/nodejs-tutorial.html
+    http://www.runoob.com/nodejs/nodejs-tutorial.html
+ node.js EventEmitter 
+     node中的许多对象都会分发事件，一个net server对象会在每次有新的连接的时分发一个事件，一个fs.readstream对象会在文件被打开的时候发出一个文件，所有产生这些事件的对像
+            都是evenrs.EventEmitter的是列
+ 
+ 
+ 

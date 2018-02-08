@@ -88,8 +88,15 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
             都是evenrs.EventEmitter的是列。
  * node.js路由router
       自己编写一个router.js文件，然后配置好http的请求，随后在node中跑起来。
+  骚气的注释号！
+     /*
+      var foo = "bar";  
+      */
+             第一种隐藏
+      //*
+      var foo = "bar";
+      */
+             第二种展示
+ 
+ 
   
-
- 
- 
- 

@@ -4,7 +4,7 @@ absolute定位与margin定位其实是没有什么冲突的，无论absolute元�
 http://www.zhangxinxu.com/wordpress/2010/01/absolute绝对定位的非绝对定位用法/
 
 2018年1月23号
-
+v
 说一下box-sizing的应用场景
 盒子模型有两种，ie和w3c的，ie的盒子模型，content包括border和padding；
 考虑到盒子的大小设置会比较麻烦，有时设置的width，结果最后大小不是之前设置的大小，所以这时就要box-sizing登场了，
@@ -86,17 +86,19 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
  * node.js EventEmitter 
      node中的许多对象都会分发事件，一个net server对象会在每次有新的连接的时分发一个事件，一个fs.readstream对象会在文件被打开的时候发出一个文件，所有产生这些事件的对像
             都是evenrs.EventEmitter的是列。
- * node.js路由router
+ * node.js路	由router 
       自己编写一个router.js文件，然后配置好http的请求，随后在node中跑起来。
   骚气的注释号！
      /*
       var foo = "bar";  
       */
-             第一种隐藏
+             第一种隐藏e
       //*
       var foo = "bar";
       */
-             第二种展示
+             第二种展示;
+             
+             
  
  
   

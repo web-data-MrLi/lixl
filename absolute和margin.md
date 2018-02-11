@@ -77,7 +77,7 @@ cookie 可存储大小4KB
 javascript 总结（常用工具类的封装）以下是地址；
 https://segmentfault.com/a/1190000013041329
 2018年1月31号
-addEventListener()js中的监听事件，可以监听好多的点击的动作，然后可以给所需要的东西添加一些内容
+addEventListener()js中的监听事件，可以监听好多的点击的动作，然后可以给所需要的东西添加一些内容b
 2018年2月2号
 
 学习node.js文档，
@@ -88,7 +88,7 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
             都是evenrs.EventEmitter的是列。
  * node.js路	由router 
       自己编写一个router.js文件，然后配置好http的请求，随后在node中跑起来。
-  骚气的注释号！
+  骚气的注释号！                                                                                
      /*
       var foo = "bar";  
       */
@@ -97,7 +97,9 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
       var foo = "bar";
       */
              第二种展示;
-             
+ *input的轮过；
+     outline:0;鼠标点击的时候边框是蓝色，设置上这个属性就好了。
+     text-indent：首行缩进；
              
  
  

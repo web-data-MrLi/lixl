@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/*怎么让一个不定宽高的DIV，水平居中呢*/
+		/*第一种方法
+		 使用 display:table-cell 方法
+                         父盒子设置:display:table-cell; text-align:center;vertical-align:middle;
+          Div 设置: display:inline-block;vertical-align:middle;
+		 */
+		/*第二种方法
+		 使用 CSS3 transform
+                             父盒子设置:position:relative；
+            Div 设置: transform: translate(-50%，-50%);根据浏览器的不同加上前堆；
+            position: absolute;top: 50%;left: 50%;
+         */
+		.aa{
+			height: 500px;
+			width: 500px;
+			background: red;
+			display:table-cell; 
+			text-align:center;
+			vertical-align:middle;
+		    }	
+		.bb{
+			display:inline-block;
+			vertical-align:middle;
+		}
+	</style>
+	<body>
+		<div class="aa">
+		<div class="bb">
+		   2018年努力，加油，拼搏
+		</div>
+		</div>
+	</body>
+</html>

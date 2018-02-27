@@ -100,7 +100,8 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
  *input的轮过；
      outline:0;鼠标点击的时候边框是蓝色，设置上这个属性就好了。
      text-indent：首行缩进；
-             
+ *  relative移动后仍占据原来的位置，不会脱离文档，absolute移动后，不会占据原来的位置的，
+   10000小时定律；   
  
  
   

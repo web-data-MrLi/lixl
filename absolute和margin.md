@@ -102,6 +102,12 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
      text-indent：首行缩进；
  *  relative移动后仍占据原来的位置，不会脱离文档，absolute移动后，不会占据原来的位置的，
    10000小时定律；   
- 
+ * box-sizing是什么
+     设置CSS盒模型为标准模型或IE模型。标准模型的宽度只包括content，二IE模型包括border和padding
+     box-sizing属性可以为三个值之一：
+
+	content-box，默认值，只计算内容的宽度，border和padding不计算入width之内
+	padding-box，padding计算入宽度内
+	border-box，border和padding计算入宽度之内
  
   

@@ -108,6 +108,8 @@ addEventListener()js中的监听事件，可以监听好多的点击的动作，
 
 	content-box，默认值，只计算内容的宽度，border和padding不计算入width之内
 	padding-box，padding计算入宽度内
+	
+	
 	border-box，border和padding计算入宽度之内
  
   
